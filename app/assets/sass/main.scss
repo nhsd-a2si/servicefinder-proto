@@ -9,6 +9,31 @@
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
 
+h3 {
+margin: 0.75em 0 0.25em 0 !important;
+margin-block-start: 0;
+margin-block-end: 0;
+}
+
+
+// I don't want the tables, used for opening hours to have the big margins
+
+table {
+  margin-bottom: 0;
+  margin-top: 0;
+  border-spacing: 0;
+  vertical-align: top;
+  width: 100%;
+  }
+  @media (min-width: 40.0625em) {
+    table {
+      margin-bottom: 0; } }
+  @media (min-width: 40.0625em) {
+    table {
+      margin-top: 0; } }
+
+
+
 @media screen and (max-width: 640px) {
 .hide-mobile {
 display: none;
@@ -162,24 +187,25 @@ text-decoration: none;
 .result-title a {
 text-decoration: none;
 }
-
 .result-type {
 font-weight: 600;
 text-transform: uppercase;
 color: #888;
 }
 .profile-section {
-line-height: 1.8;
-margin-top:1em;
-}
-.profile-section h3 {
-font-weight: 600;
 }
 
 
 dd {
 margin-inline-start: 0;
 }
+dt {
+font-weight: 600;
+}
+dl, dt, dd {
+font-size: 19px;
+}
+
 .opening-hours dt {
 display: inline-block;
 width:11em;
@@ -187,13 +213,12 @@ width:11em;
 .opening-hours dd {
 display: inline-block;
 }
-
 #opening-hours h3 {
 margin-bottom: 0;
 }
-table {
-margin: 0 !important;
-}
+
+
+
 #hours-table tr, #hours-table td {
 border: none;
 padding: 0.25em 0;
@@ -259,13 +284,7 @@ color: #555;
 line-height: 1.5;
 }
 
-dl, dt, dd {
-font-size: 19px;
-}
 
-.demographics dt {
-font-weight: 600;
-}
 .showhiddeninfo {
 font-size: 19px;
 }

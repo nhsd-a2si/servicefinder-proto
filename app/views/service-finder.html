@@ -1,0 +1,71 @@
+{% extends 'layouts/layout.html' %}
+
+{% block beforeContent %}
+  {{ hero({
+    "heading": "Service Finder",
+    "text": "Search for NHS services",
+    "imageURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/hero-2.jpg"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-grid-row nhsuk-promo-group">
+        <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+          {{ promo({
+            "href": "service-search",
+            "heading": "Service search",
+            "headingLevel": 2,
+            "description": "Find different types of services to refer a patient, based on a postcode location."
+          }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+          {{ promo({
+            "href": "service-lookup",
+            "heading": "Look up a service",
+            "headingLevel": 2,
+            "description": "Find the details for a specific service, where you know the name of it or part of the address."
+          }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-third nhsuk-promo-group__item">
+          {{ promo({
+            "href": "clinical-search",
+            "heading": "Clinical search",
+            "headingLevel": 2,
+            "description": "Find different types of services based on clinical keywords, conditions or symptoms."
+          }) }}
+        </div>
+      </div>
+
+      
+
+      <div class="nhsuk-u-reading-width">
+
+        <h3>Recently viewed services</h3>
+
+        <p class="nhsuk-u-margin-bottom-0">
+          Walk In Centre - City Centre - Manchester<br>
+          Walk In Centre - The Manchester Walk In Centre - Manchester<br>
+          Walk In Centre - Hawthorn Medical Centre - Manchester<br>
+          Walk in Centre (Nurse Led) - Prestwich, Bury<br>
+          Urgent Care Centre - Trafford General Hospital<br>
+          Walk in Centre - Ashton<br>
+          Walk in Centre - Oldham Integrated Care Centre<br>
+          HV-South Area-Timperley- Trafford<br>
+          HV-South Area- Altrincham- Trafford<br>
+          HV- Central Area -Sale -Trafford<br>
+
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="nhsuk-u-reading-width">
+        <p class="nhsuk-u-margin-bottom-0">Need help? Visit the <a href="#">instructions</a> for guidance and examples.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
