@@ -2,3 +2,30 @@
 <script src="/js/main.js"></script>
 
 <!-- Add any custom scripts -->
+
+<!-- <script type="text/javascript" src="/js/parsley.min.js" defer='defer'></script> -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.js"></script>
+
+<script type="text/javascript">
+	var options = {
+	  valueNames: [ 'name', 'synonym', 'synonym1', 'synonym2', 'synonym3','synonymm' ]
+	};
+
+	var serviceList = new List('services', options);
+
+	console.log('loaded services list');
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+  $('.showhiddeninfo').on("click", function () {
+    $('.hidden-info').fadeIn();
+    $(this).fadeOut();
+
+});
+</script>

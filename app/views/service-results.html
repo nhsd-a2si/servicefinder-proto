@@ -1,0 +1,130 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Service Finder Beta
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      <div class="results-summary">
+        <p>
+          <strong>Showing results</strong> for District/Community Nursing near M22 9NS
+          <br>
+          <span style="color: #666">Results are sorted by distance</span>
+          <br>
+          Showing <span style="text-decoration:underline">all results</span> or <a href="#">services open now</a>
+        </p>
+      </div>
+
+
+      <ul class="results-list" style="">
+        <a href="servicefinder-results-dn"><li class="result result-selected">
+          <p><span class="result-distance">0.3 miles</span> <span class="open-now">Currently open</span></p>
+          <p class="result-title">Clinics - Treatment Room - Forum Health Centre - South Manchester</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="servicefinder-results-dn-02">
+          <li class="result">
+            <p><span class="result-distance">0.7 miles</span> <span class="open-now">Currently open</span></p>
+          <p class="result-title">District Nursing - Integrated Community Team - Patch 1 - South Manchester</p>
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="servicefinder-results-dn-03"><li class="result">
+          <p><span class="result-distance">3.1 miles</span> <span class="closed-now">Closed - opens Thu 22:00</span></p>
+          <p class="result-title">District Nursing - Integrated Community Team - Night Service - South Manchester</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="#"><li class="result">
+          <p><span class="result-distance">3.6 miles</span> <span class="open-soon">Closed - opens Thu 13:00</span></p>
+          <p class="result-title">Clinics - Treatment Room - Withington Clinic - South Manchester</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="#"><li class="result">
+          <p><span class="result-distance">3.9 miles</span> <span class="open-now">Currently open</span></p>
+          <p class="result-title">HV-South Area-Timperley- Trafford</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="#"><li class="result">
+          <p><span class="result-distance">3.9 miles</span> <span class="open-now">Currently open</span></p>
+          <p class="result-title">HV-South Area- Altrincham- Trafford</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="#"><li class="result">
+          <p><span class="result-distance">3.9 miles</span> <span class="open-now">Currently open</span></p>
+          <p class="result-title">HV- Central Area -Sale -Trafford</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="#"><li class="result">
+          <p><span class="result-distance">3.9 miles</span> <span class="open-now">Currently open</span></p>
+          <p class="result-title">HV-Central Area-Sale Moor- Trafford</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="#"><li class="result">
+          <p><span class="result-distance">4.1 miles</span> <span class="open-soon">Closed - opens Thu 13:00</span></p>
+          <p class="result-title">Clinics - Treatment Room - Burnage Health Centre - South Manchester</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <a href="#"><li class="result">
+          <p><span class="result-distance">5.4 miles</span> <span class="open-now">Currently open</span></p>
+          <p class="result-title">HV-North Area-Old Trafford- Trafford</p>
+          
+          <p class="result-source">source: NHS DoS</p>
+        </li></a>
+
+        <li class="result lastresult" style="text-align: center;">
+          
+          <p>Showing 1 - 10 of 61 results</p>
+
+            <button class="pagination" style="opacity: 0.66">« Previous</button>
+
+            <button class="pagination">Next »</button>
+
+            <p><a href="missing-form" style="color: #005eb8;text-decoration: underline;">Not the results you expected,<br>or something missing?</a></p>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+       
+   
+    {% include "result-dn-01.html" ignore missing %}
+
+
+
+    </div>
+
+
+    
+
+
+
+    
+
+{% endblock %}

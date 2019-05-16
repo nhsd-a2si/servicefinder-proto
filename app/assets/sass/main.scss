@@ -8,3 +8,264 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
+
+@media screen and (max-width: 640px) {
+.hide-mobile {
+display: none;
+}
+}
+@media (min-width: 641px) {
+.hide-desktop {
+display: none;
+}
+}
+
+
+
+// Some items for the List.js autocomplete on the service type search //
+
+#service-list-container {
+}
+.phone-list {
+position: relative;
+top:150px;
+}
+.phone-list li {
+list-style: none;
+list-style-type: none;
+}
+.synonym1 {
+margin-left:0.5em;
+}
+.synonym1, .synonym2, .synonym3, .synonym4, .synonym5, .synonym6 {
+display: inline-block;
+background-color: #fe9;
+border-radius: 3px;
+padding: 0.2em 0.3em;
+border:1px solid #cb0;
+font-size:16px;
+margin-bottom: 0.2em;
+line-height: 1;
+}
+.synonymm {
+display: inline-block;
+border-radius: 3px;
+padding: 0.1em 0.3em;
+border:1px solid #ac0;
+font-size:16px;
+margin-bottom: 0.2em;
+background-color: #df6;
+}
+.synon {
+font-size: 1em;
+color:#666;
+}
+
+.nhsuk-checkboxes__label {
+line-height: 1.1 !important;
+}
+
+
+
+// some geolocate stuff
+
+#locate {
+text-decoration: none;
+background-image: url('/images/location-arrow-blue.svg');
+background-repeat: no-repeat;
+background-size: 23px;
+padding-left: 1.6em;
+}
+#dislocate {
+text-decoration: none;
+background-image: url('/images/location-arrow-outline.svg');
+background-repeat: no-repeat;
+background-size: 23px;
+padding-left: 1.6em;
+}
+@media(max-width: 640px) {
+#locate {
+background-size: 18px;
+}
+#dislocate {
+background-size: 18px;
+}
+}
+
+
+// / / / / / / / / / / / / / / / / / / / / / / /  //
+// lots of styles for the results list and detail //
+// / / / / / / / / / / / / / / / / / / / / / / /  //
+
+.results-summary p {
+font-size: 16px;
+}
+.results-list {
+padding-left: 0;
+}
+.results-list p {
+font-size: 16px;
+}
+li.result {
+list-style: none;
+background-image: url('/images/blue-right-arrow.svg');
+background-repeat: no-repeat;
+background-position: right 8px center;
+background-size: 16px;
+border-bottom: 1px solid #999;
+padding: 10px 0;
+margin-bottom: 0;
+line-height: 1.5;
+}
+
+.result-source {
+color:#666;
+}
+.results-list a {
+text-decoration: none;
+color: inherit;
+}
+li.result p:first-child {
+width: 100%;
+}
+li.result p {
+width: 91%;
+margin:0;
+}
+li.lastresult {
+background-image: none;
+border-bottom: none;
+padding-bottom: 2em;
+}
+
+.results-list a:active li {
+background-color: #ff8;
+}
+
+.results-footer {
+height :100px;
+width: 100%;
+background-color: #666;
+}
+
+
+
+.result-distance {
+display: inline-block;
+width: 80px;
+font-weight: 600;
+}
+.result-title {
+max-width: 400px;
+text-decoration: none;
+}
+.result-title a {
+text-decoration: none;
+}
+
+.result-type {
+font-weight: 600;
+text-transform: uppercase;
+color: #888;
+}
+.profile-section {
+line-height: 1.8;
+margin-top:1em;
+}
+.profile-section h3 {
+font-weight: 600;
+}
+
+
+dd {
+margin-inline-start: 0;
+}
+.opening-hours dt {
+display: inline-block;
+width:11em;
+}
+.opening-hours dd {
+display: inline-block;
+}
+
+#opening-hours h3 {
+margin-bottom: 0;
+}
+table {
+margin: 0 !important;
+}
+#hours-table tr, #hours-table td {
+border: none;
+padding: 0.25em 0;
+vertical-align: top;
+}
+
+
+
+.service-details dt {
+font-weight: 600;
+margin-top: 0.5em;
+}
+.service-details dd {
+display: inline-block;
+}
+#phone-result-content {
+overflow: scroll;
+height: 600px;
+}
+.service-information {
+max-width: 630px;
+line-height: 1.5;
+}
+.phone-number  {
+text-decoration: none;
+}
+
+
+
+.open-now {
+font-weight: 600;
+background-image: url('/images/blob-green.svg');
+background-repeat: no-repeat;
+background-size: 12px;
+background-position: top 4px left;
+padding-left: 18px;
+color: #555;
+line-height: 1.5;
+}
+.open-soon {
+font-weight: 600;
+background-image: url('/images/blob-amber.svg');
+background-repeat: no-repeat;
+background-size: 12px;
+background-position: top 4px left;
+padding-left: 18px;
+color: #555;
+line-height: 1.5;
+}
+.closed-now {
+font-weight: 600;
+background-image: url('/images/blob-red.svg');
+background-repeat: no-repeat;
+background-size: 12px;
+background-position: top 4px left;
+padding-left: 18px;
+color: #555;
+line-height: 1.5;
+}
+.open-unknown {
+font-weight: 600;
+color: #555;
+line-height: 1.5;
+}
+
+dl, dt, dd {
+font-size: 19px;
+}
+
+.demographics dt {
+font-weight: 600;
+}
+.showhiddeninfo {
+font-size: 19px;
+}

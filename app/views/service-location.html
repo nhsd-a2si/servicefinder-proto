@@ -1,0 +1,338 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Service Finder Beta
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      <h1 class="nhsuk-fieldset__legend--l" style="overflow: visible;width: 600px">
+        What is the patient's location?
+      </h1>
+
+      <form action="/services" data-parsley-validate method="get" autocomplete="off" onkeypress="return event.keyCode != 13;">
+
+        <p><span onclick="initMap()" id="locate" style="color: #005eb8">Use my current location</span></p>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="servicetype" style="">
+            Or enter a location or postcode
+          </label>
+          <input class="nhsuk-input" id="location" name="location" value="" type="text" data-parsley-trigger="change">
+
+        </div>
+
+
+        <p class="instruction" id="postal_code" style="margin: 1em 0">&nbsp;</p>
+
+        
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+      {{ backLink({
+        "href": "#",
+        "text": "Back to select service types"
+      }) }}
+
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+      <div id="map" style="height: 300px;width: 100%;position: relative;top:80px"></div>
+
+
+
+
+    </div>
+
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        //height: 100%;
+        //border-radius: 4px;
+        border: 2px solid #425563;
+        background-color: white !important;
+      }
+      .gm-style-pbc {
+        background-color: white !important;
+      }
+      
+      #description {
+        font-size: 15px;
+        font-weight: 300;
+      }
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+      #infowindow-content {
+        display: none;
+      }
+      #map #infowindow-content {
+        display: inline;
+      }
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+      }
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+      .pac-controls label {
+        font-size: 13px;
+        font-weight: 600;
+      }
+      #pac-input {
+        
+        text-overflow: ellipsis;
+        
+      }
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+      #title {
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      .pac-item {
+        font-family: "Frutiger W01", sans-serif !important;
+      }
+      .pac-item-query {
+        font-family: "Frutiger W01", sans-serif !important;
+      }
+      .pac-matched {
+        font-family: "Frutiger W01", sans-serif !important;
+      }
+    </style>
+
+    <div id="infowindow-content">
+      
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+    </div>
+
+  </div>
+
+
+    <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+      function winitMap() {
+        
+        var card = document.getElementById('pac-card');
+        var input = document.getElementById('pac-input');
+        var types = document.getElementById('type-selector');
+        var strictBounds = document.getElementById('strict-bounds-selector');
+        //map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        // Set initial restrict to the greater list of countries.
+        autocomplete.setComponentRestrictions(
+            {'country': ['gb']});
+        // Bind the map's bounds (viewport) property to the autocomplete object,
+        // so that the autocomplete requests use the current map bounds for the
+        // bounds option in the request.
+        autocomplete.bindTo('bounds', map);
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+        var infowindow = new google.maps.InfoWindow();
+        var infowindowContent = document.getElementById('infowindow-content');
+        infowindow.setContent(infowindowContent);
+        var marker = new google.maps.Marker({
+          map: map,
+          anchorPoint: new google.maps.Point(0, -29)
+        });
+        autocomplete.addListener('place_changed', function() {
+          infowindow.close();
+          marker.setVisible(false);
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            //window.alert("No details available for input: '" + place.name + "'");
+            return;
+          }
+          // If the place has a geometry, then present it on a map.
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(14);  // Why 17? Because it looks good.
+          }
+          marker.setPosition(place.geometry.location);
+          
+          marker.setVisible(true);
+          var address = '';
+          
+          if (place.address_components) {
+            address = [
+              (place.address_components[0] && place.address_components[0].short_name || ''),
+              (place.address_components[1] && place.address_components[1].short_name || ''),
+              (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+          }
+          var latlng = {
+            lat: place.geometry.location.lat(),
+            lng: place.geometry.location.lng()
+          };
+          geocoder.geocode({'location': latlng}, function(results, status) {
+              if (status === 'OK') {
+                if (results[0]) {
+                  map.setZoom(14);
+                  var reported = (results[0].address_components);
+                  var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map
+                  });
+                  for (var i = 0; i < reported.length; i++) {
+                    for (var j = 0; j < reported[i].types.length; j++) {
+                      if (reported[i].types[j] == "postal_code") {
+                        document.getElementById('postal_code').innerHTML = ('Nearest postcode: ' + reported[i].long_name + '<input name=postcode id=postcode type=hidden value=' + reported[i].long_name + '>');
+                        var reportedpostcode = reported[i].long_name;
+                      }
+                    }
+                  }
+                  //infowindowContent.children['place-icon'].src = place.icon;
+          infowindowContent.children['place-name'].textContent = place.name;
+          infowindowContent.children['place-address'].textContent = address;
+          //infoWindow.setContent('Location found: ');
+          infowindow.open(map,marker);
+                 
+                  
+                } else {
+                  window.alert('No results found');
+                }
+              } else {
+                window.alert('Geocoder failed due to: ' + status);
+              }
+            });
+          
+        });
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        function setupClickListener(id, types) {
+          var radioButton = document.getElementById(id);
+          radioButton.addEventListener('click', function() {
+            autocomplete.setTypes(types);
+          });
+        }
+        setupClickListener('changetype-all', []);
+        setupClickListener('changetype-address', ['address']);
+        setupClickListener('changetype-establishment', ['establishment']);
+        setupClickListener('changetype-geocode', ['geocode']);
+        document.getElementById('use-strict-bounds')
+            .addEventListener('click', function() {
+              console.log('Checkbox clicked! New state=' + this.checked);
+              autocomplete.setOptions({strictBounds: this.checked});
+            });
+      }
+   
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, winfoWindow, infoWindow, geocoder;
+      
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          disableDefaultUI: true
+        });
+        infoWindow = new google.maps.InfoWindow;
+        geocoder = new google.maps.Geocoder;
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var latlng = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            geocoder.geocode({'location': latlng}, function(results, status) {
+              if (status === 'OK') {
+                if (results[0]) {
+                  map.setZoom(11);
+                  var reported = (results[0].formatted_address);
+                  var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map
+                  });
+                  map.setCenter(pos);
+                  infoWindow.setPosition(pos);
+                  infoWindow.setContent('Location found: ' + reported);
+                  infoWindow.open(map,marker);
+                  var andreported = (results[0].address_components);
+                  for (var i = 0; i < andreported.length; i++) {
+                    for (var j = 0; j < andreported[i].types.length; j++) {
+                      if (andreported[i].types[j] == "postal_code") {
+                        document.getElementById('postal_code').innerHTML = ('Nearest postcode: ' + reported[i].long_name + '<input name=postcode id=postcode type=hidden value=' + reported[i].long_name + '>');
+                        var reportedpostcode = andreported[i].long_name;
+                      }
+                    }
+                  }
+                  
+                } else {
+                  window.alert('No results found');
+                }
+              } else {
+                window.alert('Geocoder failed due to: ' + status);
+              }
+            });
+            
+            
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+        //then call the groovy autocomplete places textbox 
+        winitMap();
+      }
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+      
+    </script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp5HyjUGPJ_pMv3-qb8b6VJiQH1XrWJpY&libraries=places&callback=initMap"
+        async defer></script>
+
+
+    
+
+{% endblock %}

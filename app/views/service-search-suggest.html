@@ -1,0 +1,72 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Service Finder Beta
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Selected service types
+      </h1>
+
+      <form action="/services" data-parsley-validate method="get" autocomplete="off" onkeypress="return event.keyCode != 13;">
+
+        <p>You have selected these 2 service types</p>
+
+        <div id="nhsuk-checkboxes" style="margin-bottom: 2em">
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="services-s2" checked type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Minor Injury Unit (MIU)">
+
+            <label for="services-s2" class="nhsuk-label nhsuk-checkboxes__label">Minor Injury Unit (MIU)</label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="services-s2" checked type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Urgent Treatment Centre (UTC)">
+
+            <label for="services-s2" class="nhsuk-label nhsuk-checkboxes__label">Urgent Treatment Centre (UTC)</label>
+          </div>
+
+        </div>
+
+        <p>Consider the following additional service types, that may offer similar or overlapping capabilities in your area:</p>
+
+
+        <div id="nhsuk-checkboxes" style="margin-bottom: 2em">
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="services-s3" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Urgent Care Centre (UCC)">
+
+            <label for="services-s3" class="nhsuk-label nhsuk-checkboxes__label">Urgent Care Centre (UCC)</label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="services-s4" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Walk In Centre (WIC)">
+
+            <label for="services-s4" class="nhsuk-label nhsuk-checkboxes__label">Walk In Centre (WIC)</label>
+          </div>
+
+        </div>
+
+        
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+      {{ backLink({
+        "href": "#",
+        "text": "Back to select service types"
+      }) }}
+
+    </div>
+
+    
+
+{% endblock %}
