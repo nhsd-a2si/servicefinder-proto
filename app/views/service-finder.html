@@ -4,7 +4,7 @@
   {{ hero({
     "heading": "Service Finder",
     "text": "Search for NHS services",
-    "imageURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/hero-2.jpg"
+    "imageURL": "images/large-splash-banner.png"
   }) }}
 {% endblock %}
 
@@ -43,21 +43,56 @@
 
       <div class="nhsuk-u-reading-width">
 
-        <h3>Recently viewed services</h3>
+        <h3>Recently selected services</h3>
+        <p>The last 10 services you have selected - click to show details.</p>
 
-        <p class="nhsuk-u-margin-bottom-0">
-          Walk In Centre - City Centre - Manchester<br>
-          Walk In Centre - The Manchester Walk In Centre - Manchester<br>
-          Walk In Centre - Hawthorn Medical Centre - Manchester<br>
-          Walk in Centre (Nurse Led) - Prestwich, Bury<br>
-          Urgent Care Centre - Trafford General Hospital<br>
-          Walk in Centre - Ashton<br>
-          Walk in Centre - Oldham Integrated Care Centre<br>
-          HV-South Area-Timperley- Trafford<br>
-          HV-South Area- Altrincham- Trafford<br>
-          HV- Central Area -Sale -Trafford<br>
+        <nav class="nhsuk-contents-list" role="navigation" aria-label="Recently viewed services">
+          <h2 class="nhsuk-u-visually-hidden">Last 10 services</h2>
+          <ol class="nhsuk-contents-list__list">
+            
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">Walk In Centre - City Centre - Manchester</a>
+            </li>
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">Walk In Centre - The Manchester Walk In Centre - Manchester</a>
+            </li>
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">Walk In Centre - Hawthorn Medical Centre - Manchester</a>
+            </li>
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">Walk in Centre (Nurse Led) - Prestwich, Bury</a>
+            </li>
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">Urgent Care Centre - Trafford General Hospital</a>
+            </li>
 
-        </p>
+          <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">Walk in Centre - Ashton</a>
+            </li>
+
+          <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">Walk in Centre - Oldham Integrated Care Centre</a>
+            </li>
+
+          <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">HV-South Area-Timperley- Trafford</a>
+            </li>
+
+          <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">HV-South Area- Altrincham- Trafford</a>
+            </li>
+
+          <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="#">HV- Central Area -Sale -Trafford</a>
+            </li>
+          </ol>
+        </nav>
+
+          
+          
+
+
+       
       </div>
 
       <hr>
