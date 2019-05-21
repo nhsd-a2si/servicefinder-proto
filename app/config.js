@@ -2,7 +2,7 @@
 
 module.exports = {
   // Service name
-  serviceName: 'NHS.UK prototype kit',
+  serviceName: 'NHS.UK Service Finder',
 
   // Port to run nodemon on locally
   port: 2000,
@@ -15,5 +15,5 @@ module.exports = {
   useCookieSessionStore: 'false',
 
   // Enable or disable built-in docs and examples.
-  useDocumentation: true,
+  useDocumentation: false,
 }

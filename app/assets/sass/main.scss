@@ -9,11 +9,104 @@
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
 
+
+
+// a few utilities to hide things on x devices
+
+@media screen and (max-width: 640px) {
+.hide-mobile {
+  display: none;
+  }
+}
+@media (min-width: 641px) {
+.hide-desktop {
+  display: none;
+  }
+}
+
+
+// for those long titles you don't want to stretch all over the screen
+.long-fix {
+  max-width: 630px;
+}
+// and for when you do
+.short-fix {
+  overflow: visible;
+  width: 880px
+}
+
+
+
+// overiding a few style things 
+
 h3 {
 margin: 0.75em 0 0.25em 0 !important;
 margin-block-start: 0;
 margin-block-end: 0;
 }
+
+.nhsuk-hero--image .nhsuk-hero__overlay {
+  background-color: rgba(0,0,0,0)!important;
+}
+
+.top-nav {
+  position: relative;
+  top:-14px;
+  border-bottom: 2px rgba(0,0,0,0.15) solid;
+  margin-bottom: 0.3em;
+}
+.start-over {
+  float: right;
+  background-image: url('/images/startover-bl.svg');
+  background-repeat: no-repeat;
+  background-size: 29px;
+  background-position: -6px 1.4px;
+  padding-left: 1.5em;
+}
+.start-over:hover {
+  background-image: url('/images/startover-bk.svg');
+}
+
+
+
+
+// hack the hero image size, we don't need such a tall one for pro users?
+
+@media only screen and (min-width: 40.0625em) {
+  .nhsuk-hero--image {
+      /* [4] */
+      min-height: 140px;
+      /* [5] */
+  }
+  .nhsuk-hero--image .nhsuk-hero__overlay {
+      height: 200px;
+      /* [6] */
+}}
+@media screen and (-ms-high-contrast: active) {
+  .nhsuk-hero--image {
+      min-height: 0;
+      /* [12] */
+}}
+.nhsuk-hero--image .nhsuk-hero__overlay {
+  background-color: rgba(0, 47, 92, 0.1);
+  /* [7] */
+}
+@media only screen {
+  .nhsuk-hero--image .nhsuk-hero__overlay {
+      /* [4] */
+      min-height: 200px;
+      /* [6] */
+}}
+@media screen and (-ms-high-contrast: active) {
+  .nhsuk-hero--image .nhsuk-hero__overlay {
+      height: auto;
+      /* [12] */
+      min-height: 0;
+      /* [12] */
+}}
+
+
+
 
 
 // I don't want the tables, used for opening hours to have the big margins
