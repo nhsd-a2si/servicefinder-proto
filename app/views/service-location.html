@@ -7,7 +7,21 @@
 
 
 {% block content %}
+  <div class="nhsuk-grid-row top-nav hide-mobile">
+    <div class="nhsuk-grid-column-one-half">
+      {{ backLink({
+        "href": "#",
+        "text": "Back to service types"
+      }) }}
+    </div>
 
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link start-over" href="#">
+        Start over</a>
+      </div>
+    </div>
+  </div><!-- end nav topline -->
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">

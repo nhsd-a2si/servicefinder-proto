@@ -22,10 +22,43 @@
 
 
 
+
+
 <script type="text/javascript">
   $('.showhiddeninfo').on("click", function () {
     $('.hidden-info').fadeIn();
     $(this).fadeOut();
 
 });
+</script>
+
+
+
+<script type="text/javascript">
+	
+$(document).ready(function(){
+
+  $('input#servicetype').keypress(function() {
+      $('#hiddenlist').css("visibility","visible");
+      $('#nhsuk-footer').css("visibility","hidden");
+      $('html').css("height","100%");
+      $(this).focus();
+    });
+
+  var selected = [];
+
+  $('#hiddenlist input:checked').each(function() {
+      selected.push($(this).attr('name'));
+  });
+  console.log(selected);
+
+});
+
+
+
+$('#servicetype').on('focus', function() {
+    document.body.scrollTop = $(this).offset().top;
+});
+
+
 </script>

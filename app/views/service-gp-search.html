@@ -1,0 +1,146 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Service Finder Beta
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row top-nav hide-mobile">
+    <div class="nhsuk-grid-column-one-half">
+      {{ backLink({
+        "href": "service-gp-yesno",
+        "text": "Back to patient GP"
+      }) }}
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link start-over" href="#">
+        Start over</a>
+      </div>
+    </div>
+  </div><!-- end nav topline -->
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      <h1 class="nhsuk-fieldset__legend--l short-fix">
+        Patient's GP
+      </h1>
+
+      <form action="/services" data-parsley-validate method="get" autocomplete="off" onkeypress="return event.keyCode != 13;">
+
+        <div id="parsely-error-field" style="font-size: 1.2em"></div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="servicetype" style="overflow: visible;width: 660px;margin-bottom: 24px">
+            Start typing to search for available GP practices<br>
+            <span class="nhsuk-hint" id="example-hint">
+              You can search by name or partial address.<br>
+              For example: Springfield Medical Centre or Long Pine Road.
+            </span>
+          </label>
+          <input class="nhsuk-input search" id="servicetype" name="servicetype" value="{{ data['servicetype'] }}" type="text" data-parsley-trigger="change">
+          <!--
+            <input class="search" name="forminput" id="forminput" data-parsley-trigger="change"/> -->
+        </div>
+
+        
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+      
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+      <div id="service-list-container nhsuk-radios">
+
+        <ul class="list phone-list" id="hiddenlist" style="top:176px;min-height: 500px;visibility: hidden;">
+          
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g1" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Benchill Medical Practice - South Manchester">
+
+          <label for="gp-g1" class="nhsuk-label nhsuk-radios__label">Benchill Medical Practice - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g2" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="RK Medical Practice - South Manchester">
+
+          <label for="gp-g2" class="nhsuk-label nhsuk-radios__label">RK Medical Practice - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g3" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Cornishway Group Practice - South Manchester">
+
+          <label for="gp-g3" class="nhsuk-label nhsuk-radios__label">Cornishway Group Practice - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g4" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Peel Hall Medical Practice - South Manchester">
+
+          <label for="gp-g4" class="nhsuk-label nhsuk-radios__label">Peel Hall Medical Practice - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g5" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="The Maples Medical Centre - South Manchester">
+
+          <label for="gp-g5" class="nhsuk-label nhsuk-radios__label">The Maples Medical Centre - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g6" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Bowland Medical Practice - South Manchester">
+
+          <label for="gp-g6" class="nhsuk-label nhsuk-radios__label">Bowland Medical Practice - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g7" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Tregenna Group Practice - South Manchester">
+
+          <label for="gp-g7" class="nhsuk-label nhsuk-radios__label">Tregenna Group Practice - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g8" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Gatley Green Surgery (Branch Surgery of NGP) - South Manchester">
+
+          <label for="gp-g8" class="nhsuk-label nhsuk-radios__label">Gatley Green Surgery (Branch Surgery of NGP) - South Manchester</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g9" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Gatley Medical Centre - Stockport">
+
+          <label for="gp-g9" class="nhsuk-label nhsuk-radios__label">Gatley Medical Centre - Stockport</label>
+        </div>
+        </li>
+
+        <li><div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g10" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Northenden Group Practice - South Manchester">
+
+          <label for="gp-g10" class="nhsuk-label nhsuk-radios__label">Northenden Group Practice - South Manchester</label>
+        </div>
+        </li>
+
+
+
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

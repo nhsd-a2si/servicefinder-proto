@@ -8,7 +8,7 @@
   <div class="nhsuk-grid-row top-nav hide-mobile">
     <div class="nhsuk-grid-column-one-half">
       {{ backLink({
-        "href": "#",
+        "href": "service-finder",
         "text": "Back to search types"
       }) }}
     </div>
@@ -36,7 +36,7 @@
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="servicetype" style="overflow: visible;width: 660px;margin-bottom: 24px">
             Start typing to search for available service types<br>
-            eg. GP Practice or Fall Service. Multiple selections are ok.
+            Example: GP Practice or Fall Service. Multiple selections are ok.
           </label>
           <input class="nhsuk-input search" id="servicetype" name="servicetype" value="{{ data['servicetype'] }}" type="text" data-parsley-trigger="change">
           <!--
