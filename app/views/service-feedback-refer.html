@@ -1,0 +1,125 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Service Finder Beta
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row top-nav hide-mobile">
+    <div class="nhsuk-grid-column-one-half">
+      {{ backLink({
+        "href": "javascript: history.go(-1)",
+        "text": "Back"
+      }) }}
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link start-over" href="#">
+        Start over</a>
+      </div>
+    </div>
+  </div><!-- end nav topline -->
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l short-fix">
+        Tell us what's wrong – problems referring patients to this service
+      </h1>
+
+      
+      <p>For: <strong>Dentist - Sussex - Flint House Dental Practice - St Leonards on Sea</strong></p>
+
+      <p>If you are having problems getting a service to accept your patient, record your feedback here to help improve comissioning of services.</p>
+
+
+      <h2 class="nhsuk-heading-l">These are the search terms you used</h2>
+     
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Service types (2): Disctrict/Community Nurse, Fall Service (Acute)</li>
+        <li>Location: Postcode M22 6AT
+        <li>Patient GP: Has a GP and you selected GP Access Hub - Peel Hall Medical Practice - South Manchester</li>
+        <li>Patient information: Age not provided, Sex not provided</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-l">What was wrong?</h2>
+
+      <span class="nhsuk-hint">Tick as manay as are required</span>
+
+      <div class="nhsuk-form-group">
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="feedback-1" type="checkbox" name="feedback-1" data-parsley-required data-parsley-required-message="Tick to continue or press back" data-parsley-errors-container="#parsely-error-field" value="refusing">
+
+          <label for="feedback-1" class="nhsuk-label nhsuk-checkboxes__label">Service refusing patient</label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="feedback-2" type="checkbox" name="feedback-2" data-parsley-required data-parsley-required-message="Tick to continue or press back" data-parsley-errors-container="#parsely-error-field" value="critera">
+
+          <label for="feedback-2" class="nhsuk-label nhsuk-checkboxes__label">Listed referral criteria is wrong</label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="feedback-3" type="checkbox" name="feedback-3" data-parsley-required data-parsley-required-message="Tick to continue or press back" data-parsley-errors-container="#parsely-error-field" value="capacity">
+
+          <label for="feedback-3" class="nhsuk-label nhsuk-checkboxes__label">Service at capacity</label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="feedback-4" type="checkbox" name="feedback-4" data-parsley-required data-parsley-required-message="Tick to continue or press back" data-parsley-errors-container="#parsely-error-field" value="closing">
+
+          <label for="feedback-4" class="nhsuk-label nhsuk-checkboxes__label">Service closing soon</label>
+        </div>
+
+       
+       
+</div>
+
+
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="more-detail">
+            Please add further details to help in the box below
+          </label>
+          <span class="nhsuk-hint" id="more-detail-hint">
+            Give as much information as you feel able without including patient identifiable details
+          </span>
+          <textarea class="nhsuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-with-hint-text">
+            Email address (optional)
+          </label>
+          <span class="nhsuk-hint" id="input-with-hint-text-hint">
+            <p>If you give consent for us to follow up your feedback in more detail and future research, enter an email address here. This is the only thin we'l use it for.</p>
+          </span>
+          <input class="nhsuk-input" id="input-with-hint-text" name="test-name-2" type="text" aria-describedby="input-with-hint-text-hint">
+        </div>
+
+        
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+      
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+
+      
+
+    </div>
+  </div>
+
+{% endblock %}
