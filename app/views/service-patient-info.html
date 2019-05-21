@@ -8,8 +8,8 @@
   <div class="nhsuk-grid-row top-nav hide-mobile">
     <div class="nhsuk-grid-column-one-half">
       {{ backLink({
-        "href": "#",
-        "text": "Back to search types"
+        "href": "javascript: history.go(-1)",
+        "text": "Back"
       }) }}
     </div>
 
@@ -29,28 +29,60 @@
         Patient information
       </h1>
 
+      <span class="nhsuk-hint" id="example-hint">
+        While optional, providing these details may improve the quality of your search results.
+      </span>
+
       <div class="nhsuk-form-group">
 
-        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-          <legend class="nhsuk-fieldset__legend">
-            Does the patient have a GP?
+        <fieldset class="nhsuk-fieldset" aria-describedby="age-hint" role="group">
+          <legend class="nhsuk-fieldset__legend" style="width: 100%;margin-bottom: -0.4em">
+            <span style="display: inline-block;">Age in years</span>&nbsp;<span class="nhsuk-hint" style="float: right;display: inline-block;"><a href="service-patient-info-infants">Use weeks / months for young children</a></span>
           </legend>
 
-          <span class="nhsuk-hint" id="example-hint">
-            Adding GP details may increase the number of services you can refer your patient to.
-          </span>
+          <div class="nhsuk-date-input" id="age">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3" id="age-years" name="age-years" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+            <br clear="all">
+
+        
+
+    
+
+
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="patient sex">
+          <legend class="nhsuk-fieldset__legend">
+            Patient sex 
+          </legend>
+
+          
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                Yes
+              <input class="nhsuk-radios__input" id="sex-1" name="sex" type="radio" value="Female">
+              <label class="nhsuk-label nhsuk-radios__label" for="sex-1">
+                Female
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                No
+              <input class="nhsuk-radios__input" id="sex-2" name="sex" type="radio" value="Male">
+              <label class="nhsuk-label nhsuk-radios__label" for="sex-2">
+                Male
+              </label>
+            </div>
+             <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="sex-3" name="sex" type="radio" value="Other">
+              <label class="nhsuk-label nhsuk-radios__label" for="sex-3">
+                Other
               </label>
             </div>
           </div>
