@@ -23,25 +23,40 @@
 
 
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-fieldset__legend--l short-fix">
-        Select service types
+        Patient information
       </h1>
 
-      <form action="/services" data-parsley-validate method="get" autocomplete="off" onkeypress="return event.keyCode != 13;">
+      <div class="nhsuk-form-group">
 
-        <div id="parsely-error-field" style="font-size: 1.2em"></div>
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+          <legend class="nhsuk-fieldset__legend">
+            Does the patient have a GP?
+          </legend>
 
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="servicetype" style="overflow: visible;width: 660px;margin-bottom: 24px">
-            Start typing to search for available service types<br>
-            eg. GP Practice or Fall Service. Multiple selections are ok.
-          </label>
-          <input class="nhsuk-input search" id="servicetype" name="servicetype" value="{{ data['servicetype'] }}" type="text" data-parsley-trigger="change">
-          <!--
-            <input class="search" name="forminput" id="forminput" data-parsley-trigger="change"/> -->
-        </div>
+          <span class="nhsuk-hint" id="example-hint">
+            Adding GP details may increase the number of services you can refer your patient to.
+          </span>
+
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Yes
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
 
         
 
@@ -55,44 +70,9 @@
       
     </div>
 
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-one-third">
 
-      <div id="service-list-container nhsuk-checkboxes">
-        <ul class="list phone-list" id="hiddenlist" style="min-height: 500px">
-          
-        <li><div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="services-s2" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Ambulance Service">
-
-          <label for="services-s2" class="nhsuk-label nhsuk-checkboxes__label">Ambulance Service</label>
-        </div>
-        </li>
-        <li><div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="services-s3" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Accomodation and Housing Support">
-
-          <label for="services-s3" class="nhsuk-label nhsuk-checkboxes__label">Accomodation and Housing Support</label>
-          <span class="synonyms synonym1">Shelters</span>
-        </div>
-        </li>
-
-        <li><div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="services-s4" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Audiology">
-
-          <label for="services-s4" class="nhsuk-label nhsuk-checkboxes__label">Audiology</label>
-          <span class="synonyms synonym1">Hearing Test Service</span>
-        </div>
-        </li>
-
-        <li><div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="services-s5" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Bariatric Service">
-
-          <label for="services-s5" class="nhsuk-label nhsuk-checkboxes__label">Bariatric Service</label>
-          <span class="synonyms synonym1">Obesity Service</span>
-        </div>
-        </li>
-
-
-
-      </ul>
+      
 
     </div>
   </div>
