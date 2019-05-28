@@ -22,7 +22,7 @@
   </div><!-- end nav topline -->
 
 
-  <div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-row" id="services">
     <div class="nhsuk-grid-column-one-third">
 
       <h1 class="nhsuk-fieldset__legend--l short-fix">
@@ -39,6 +39,7 @@
             Example: GP Practice or Fall Service. Multiple selections are ok.
           </label>
           <input class="nhsuk-input search" id="servicetype" name="servicetype" value="{{ data['servicetype'] }}" type="text" data-parsley-trigger="change">
+
           <!--
             <input class="search" name="forminput" id="forminput" data-parsley-trigger="change"/> -->
         </div>
@@ -57,19 +58,29 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <div id="service-list-container nhsuk-checkboxes">
-        <ul class="list phone-list" id="hiddenlist" style="min-height: 500px">
+
+
+      
+
+
+
+      <div class="service-list-container nhsuk-checkboxes" id="services">
+        <ul class="list phone-list" id="hiddenlist" style="visibility: hidden; min-height: 500px">
+
+
+        
+
           
         <li><div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="services-s2" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Ambulance Service">
 
-          <label for="services-s2" class="nhsuk-label nhsuk-checkboxes__label">Ambulance Service</label>
+          <label for="services-s2" class="nhsuk-label nhsuk-checkboxes__label name">Ambulance Service</label>
         </div>
         </li>
         <li><div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="services-s3" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Accomodation and Housing Support">
 
-          <label for="services-s3" class="nhsuk-label nhsuk-checkboxes__label">Accomodation and Housing Support</label>
+          <label for="services-s3" class="nhsuk-label nhsuk-checkboxes__label name">Accomodation and Housing Support</label>
           <span class="synonyms synonym1">Shelters</span>
         </div>
         </li>
@@ -77,7 +88,7 @@
         <li><div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="services-s4" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Audiology">
 
-          <label for="services-s4" class="nhsuk-label nhsuk-checkboxes__label">Audiology</label>
+          <label for="services-s4" class="nhsuk-label nhsuk-checkboxes__label name">Audiology</label>
           <span class="synonyms synonym1">Hearing Test Service</span>
         </div>
         </li>
@@ -85,7 +96,7 @@
         <li><div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="services-s5" type="checkbox" name="selectedservices" data-parsley-required data-parsley-required-message="You must select at least one service type to continue" data-parsley-errors-container="#parsely-error-field" value="Bariatric Service">
 
-          <label for="services-s5" class="nhsuk-label nhsuk-checkboxes__label">Bariatric Service</label>
+          <label for="services-s5" class="nhsuk-label nhsuk-checkboxes__label name">Bariatric Service</label>
           <span class="synonyms synonym1">Obesity Service</span>
         </div>
         </li>

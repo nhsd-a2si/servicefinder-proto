@@ -5,18 +5,10 @@
 
 <!-- <script type="text/javascript" src="/js/parsley.min.js" defer='defer'></script> -->
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.js">
+	
 
-<script type="text/javascript">
-	var options = {
-	  valueNames: [ 'name', 'synonym', 'synonym1', 'synonym2', 'synonym3','synonymm' ]
-	};
-
-	var serviceList = new List('services', options);
-
-	console.log('loaded services list');
 </script>
-
 
 
 
@@ -35,10 +27,8 @@
 
 
 <script type="text/javascript">
-	
-$(document).ready(function(){
 
-  $('input#servicetype').keypress(function() {
+	$('input#servicetype').keypress(function() {
       $('#hiddenlist').css("visibility","visible");
       $('#nhsuk-footer').css("visibility","hidden");
       $('html').css("height","100%");
@@ -52,13 +42,11 @@ $(document).ready(function(){
   });
   console.log(selected);
 
-});
+var options = {
+  valueNames: [ 'name','synonym', 'synonym1', 'synonym2', 'synonym3','synonymm' ]
+};
 
-
-
-$('#servicetype').on('focus', function() {
-    document.body.scrollTop = $(this).offset().top;
-});
-
+var serviceList = new List('services', options);
 
 </script>
+
