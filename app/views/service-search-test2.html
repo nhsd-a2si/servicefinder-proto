@@ -1,0 +1,180 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Service Finder Beta
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  label em {
+  background-color:#ffff99;
+  color: #300;
+  font-weight:bold;
+  font-style:normal;
+}
+
+</style>
+
+
+
+  <div class="nhsuk-grid-row top-nav hide-mobile">
+    <div class="nhsuk-grid-column-one-half">
+      {{ backLink({
+        "href": "service-finder",
+        "text": "Back to search types"
+      }) }}
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link start-over" href="#">
+        Start over</a>
+      </div>
+    </div>
+  </div><!-- end nav topline -->
+
+
+  <div class="nhsuk-grid-row" id="services">
+    <div class="nhsuk-grid-column-one-third">
+
+      <h1 class="nhsuk-fieldset__legend--l short-fix">
+        Select service types
+      </h1>
+
+      <form action="/services" data-parsley-validate method="get" autocomplete="off" onkeypress="return event.keyCode != 13;">
+
+        <div id="parsely-error-field" style="font-size: 1.2em"></div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="servicetype" style="overflow: visible;width: 660px;margin-bottom: 24px">
+            Start typing to search for available service types<br>
+            Example: GP Practice or Fall Service. Multiple selections are ok.
+          </label>
+          <input class="nhsuk-input search" id="servicetype" name="servicetype" value="{{ data['servicetype'] }}" type="text" data-parsley-trigger="change">
+
+          <!--
+            <input class="search" name="forminput" id="forminput" data-parsley-trigger="change"/> -->
+        </div>
+
+        
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+      
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+      <div class="service-list-container nhsuk-checkboxes" id="services">
+        <ul class="list phone-list first-level" id="service-list-container" style="visibility: hidden; min-height: 100px">
+
+
+        
+
+          
+        <li class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" data-locator="checkbox-service-type-cardiac-service" id="checkbox-service-type-cardiac-service" name="selectedservices" type="checkbox">
+              <label class="nhsuk-label nhsuk-checkboxes__label " for="checkbox-service-type-cardiac-service" data-locator="label-checkbox-service-type-cardiac-service">
+                  Cardiac Service
+                  </label>
+          
+                    <ul>
+                      <li><label class="synonym">Anti-Coagulation Service (INR Clinic)</label></li>
+                      <li><label class="synonym">Cardiac Support Group</label></li>
+                      <li><label class="synonym">Cardiology Service</label></li>
+                      <li><label class="synonym">Heart Failure Service</label></li>
+                      <li><label class="synonym">Heart Support Service</label></li>
+                      <li><label class="synonym">Warfarin Service</label></li>
+                    </ul>
+        </li>      
+        <li class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" data-locator="checkbox-service-type-respiratory-service" id="checkbox-service-type-respiratory-service" name="selectedservices" type="checkbox">
+            <label class="nhsuk-label nhsuk-checkboxes__label " for="checkbox-service-type-respiratory-service" data-locator="label-checkbox-service-type-respiratory-service">
+                Respiratory Service
+                </label>
+                  <ul>
+                    <li><label class="synonym">Asthma Service</label></li>
+                    <li><label class="synonym">Bronchiectasis Service</label></li>
+                    <li><label class="synonym">Chronic Obstructive Pulmonary Disease (COPD) Service</label></li>
+                    <li><label class="synonym">Community Respiratory Service</label></li>
+                    <li><label class="synonym">Idiopathic Pulmonary Fibrosis (IPF) Service</label></li>
+                    <li><label class="synonym">Integrated Respiratory Service</label></li>
+                    <li><label class="synonym">Pulmonary Rehabilitation</label></li>
+                  </ul>
+        </li>    
+        <li class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" data-locator="checkbox-service-type-mental-health---drug,-alcohol-and-substance-misuse-service" id="checkbox-service-type-mental-health---drug,-alcohol-and-substance-misuse-service" name="selectedservices" type="checkbox">
+            <label class="nhsuk-label nhsuk-checkboxes__label " for="checkbox-service-type-mental-health---drug,-alcohol-and-substance-misuse-service" data-locator="label-checkbox-service-type-mental-health---drug,-alcohol-and-substance-misuse-service">
+                Mental Health - Drug, Alcohol and Substance Misuse Service
+                </label>
+                  <ul>
+                    <li><label class="synonym">Addiction Service</label></li>
+                    <li><label class="synonym">Alcohol Abuse Service</label></li>
+                    <li><label class="synonym">Drug Abuse Service</label></li>
+                    <li><label class="synonym">Substance Abuse Service</label></li>
+                 </ul>
+        </li>    
+        <li class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" data-locator="checkbox-service-type-pharmacy-enhanced-service" id="checkbox-service-type-pharmacy-enhanced-service" name="selectedservices" type="checkbox">
+            <label class="nhsuk-label nhsuk-checkboxes__label " for="checkbox-service-type-pharmacy-enhanced-service" data-locator="label-checkbox-service-type-pharmacy-enhanced-service">
+                Pharmacy Enhanced Service
+                </label>
+                  <ul>
+                    <li><label class="synonym">Chlamydia Grab Box Service</label></li>
+                    <li><label class="synonym">Condom Distribution Scheme (C-Card)</label></li>
+                    <li><label class="synonym">Emergency Contraception Service</label></li>
+                    <li><label class="synonym">Emergency Hormone Replacement Therapy (EHRT) Service</label></li>
+                    <li><label class="synonym">Needle Exchange Service</label></li>
+                </ul>
+        </li>   
+        <li class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" data-locator="checkbox-service-type-diagnostic-imaging-service" id="checkbox-service-type-diagnostic-imaging-service" name="selectedservices" type="checkbox">
+            <label class="nhsuk-label nhsuk-checkboxes__label " for="checkbox-service-type-diagnostic-imaging-service" data-locator="label-checkbox-service-type-diagnostic-imaging-service">
+                Diagnostic Imaging Service
+                </label>
+        <ul>
+                    <li><label class="synonym">Chest X-ray (CXR) Service</label></li>
+                    <li><label class="synonym">PET/CT/MRI Scan Service</label></li>
+                    <li><label class="synonym">Ultrasound (US) Service</label></li>
+                    <li><label class="synonym">X-ray (XR) Service</label></li>
+                  </ul>
+        </li>       
+        <li class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" data-locator="checkbox-service-type-mental-health---eating-disorder-service" id="checkbox-service-type-mental-health---eating-disorder-service" name="selectedservices" type="checkbox">
+            <label class="nhsuk-label nhsuk-checkboxes__label " for="checkbox-service-type-mental-health---eating-disorder-service" data-locator="label-checkbox-service-type-mental-health---eating-disorder-service">
+                Mental Health - Eating Disorder Service
+                </label>
+        <ul>
+                    <li><label class="synonym">Anorexia Nervosa Service</label></li>
+                    <li><label class="synonym">Bulimarexia Service</label></li>
+                    <li><label class="synonym">Bulimia Service</label></li>
+                  </ul>
+                
+        </li>
+        <li class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" data-locator="checkbox-service-type-accomodation-and-housing-support" id="checkbox-service-type-accomodation-and-housing-support" name="selectedservices" type="checkbox">
+            <label class="nhsuk-label nhsuk-checkboxes__label " for="checkbox-service-type-accomodation-and-housing-support" data-locator="label-checkbox-service-type-accomodation-and-housing-support">
+                Accomodation and Housing Support
+                </label>
+        
+                <ul>
+                    <li><label class="synonym">Assisted Living Service</label></li>
+                    <li><label class="synonym">Extra Care Housing</label></li>
+                </ul>
+
+        
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

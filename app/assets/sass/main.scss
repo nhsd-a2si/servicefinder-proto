@@ -155,8 +155,8 @@ display: none;
 
 
 // Some items for the List.js autocomplete on the service type search //
-
-#service-list-container {
+.synonym-container {
+margin-top:0.25em;
 }
 .phone-list {
 position: relative;
@@ -166,10 +166,19 @@ top:150px;
 list-style: none;
 list-style-type: none;
 }
+label.synonym  {
+  float: left;
+}
+
+
+.vis {
+  font-weight: 600;
+}
+
 .synonym1 {
 margin-left:0.5em;
 }
-.synonym1, .synonym2, .synonym3, .synonym4, .synonym5, .synonym6 {
+.synonym, .synonym1, .synonym2, .synonym3, .synonym4, .synonym5, .synonym6 {
 display: inline-block;
 background-color: #fe9;
 border-radius: 3px;
@@ -179,6 +188,7 @@ font-size:16px;
 margin-bottom: 0.2em;
 line-height: 1;
 }
+
 .synonymm {
 display: inline-block;
 border-radius: 3px;

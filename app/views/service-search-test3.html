@@ -1,0 +1,189 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Service Finder Beta
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row top-nav hide-mobile">
+    <div class="nhsuk-grid-column-one-half">
+      {{ backLink({
+        "href": "service-finder",
+        "text": "Back to search types"
+      }) }}
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link start-over" href="#">
+        Start over</a>
+      </div>
+    </div>
+  </div><!-- end nav topline -->
+
+
+  <div class="nhsuk-grid-row" id="services">
+    <div class="nhsuk-grid-column-one-third">
+
+      <h1 class="nhsuk-fieldset__legend--l short-fix">
+        Select service types
+      </h1>
+
+     
+
+      
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+      
+
+
+
+     
+    <div id="users">
+      <input class="search" placeholder="Search" />
+      
+          <dl class="accordion" data-accordion>
+              <dd>
+                  <!-- <a href="#panel1" class="collapsed"><span class="icon-minus-plus"></span>Employment Services</a> -->
+                  <div id="panel1" class="content">
+                      <ul class="list first-level">
+                          <li>
+                              <a href="#" class="searchable link-first-level">Card Services Summary</a>
+                              <ul class="list">
+                                  <li>
+                                        <!-- <span class="section">Permanent Access Card</span> -->
+                                      <a class="searchable" href="#">Permanent Access Card</a>
+
+                                        <ul class="list last-level">
+                                            <li><a class="searchable" href="#">Apply for new</a></li>
+                                            <li><a class="searchable" href="#">Apply for replacement</a></li>
+                                            <li><a class="searchable" href="#">Cancel current</a></li>
+                                            <li><span class="searchable">Chest X-ray (CXR) Service</span></li>
+                                            <li><span class="searchable">PET/CT/MRI Scan Service</span></li>
+                                            <li><span class="searchable">Ultrasound (US) Service</span></li>
+                                            <li><span class="searchable">X-ray (XR) Service</span></li>
+                                        </ul>
+                                  </li>
+                                  <li>
+                                      <!-- <span class="section">Permanent Identity Card</span> -->
+                                      <a class="searchable" href="#">Permanent Identity Card</a>
+
+                                       <ul class="list last-level">
+                                          <li><a class="searchable" href="#">Apply for new</a></li>
+                                          <li><a class="searchable" href="#">Apply for replacement</a></li>
+                                          <li><a class="searchable" href="#">Cancel current</a></li>
+                                      </ul>
+                                  <li>
+                                      <!-- <span class="section">Temporary Access Card</span> -->
+                                      <a class="searchable" href="#">Temporary Access Card</a>
+
+                                      <ul class="list last-level">
+                                          <li><a class="searchable" href="#">Apply for new</a></li>
+                                          <li><a class="searchable" href="#">Apply for replacement</a></li>
+                                          <li><a class="searchable" href="#">Cancel current</a></li>
+                                      </ul>
+                                  <li>
+                                      <!-- <span class="section">Free Zone Card</span> -->
+                                      <a class="searchable" href="#">Free Zone Card</a>
+
+                                      <ul class="list last-level">
+                                          <li><a class="searchable" href="#">Apply for new</a></li>
+                                          <li><a class="searchable" href="#">Apply for duplicate</a></li>
+                                          <li><a class="searchable" href="#">Apply for replacement</a></li>
+                                          <li><a class="searchable" href="#">Amend current</a></li>
+                                          <li><a class="searchable" href="#">Cancel current</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a href="#" class="searchable link-first-level">Visa &amp; Permit Services Summary</a>
+                              <ul class="list">
+                                  <li>
+                                      <!-- <span>Employment Visa Entry Permit</span> -->
+                                      <a class="searchable" href="#">Employment Visa Entry Permit</a>
+                                       <ul class="list last-level">
+                                          <li><a class="searchable" href="#">Apply for new</a></li>
+                                          <li><a class="searchable" href="#">Amend existing</a></li>
+                                          <li><a class="searchable" href="#">Renew existing (max. 2)</a></li>
+                                          <li><a class="searchable" href="#">Renew existing (extra)</a></li>
+                                          <li><a class="searchable" href="#">Cancel existing</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <!-- <span>Visit Visa</span> -->
+                                      <a class="searchable" href="#">Visit Visa</a>
+
+                                       <ul class="list last-level">
+                                          <li><a class="searchable" href="#">Apply for new</a></li>
+                                          <li><a class="searchable" href="#">Apply for extension</a></li>
+                                          <li><a class="searchable" href="#">Amend existing</a></li>
+                                          <li><a class="searchable" href="#">Renew existing</a></li>
+                                          <li><a class="searchable" href="#">Cancel existing</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <!-- <span>Residence Permit</span> -->
+                                      <a class="searchable" href="#">Residence Permit</a>
+
+                                       <ul class="list last-level">
+                                          <li><a class="searchable" href="#">Apply for new</a></li>
+                                          <li><a class="searchable" href="#">Apply for replacement</a></li>
+                                          <li><a class="searchable" href="#">Amend existing</a></li>
+                                          <li><a class="searchable" href="#">Renew existing</a></li>
+                                          <li><a class="searchable" href="#">Transfer existing</a></li>
+                                          <li><a class="searchable" href="#">Cancel existing</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a href="#" class="searchable link-first-level">Omar Letter Services</a>
+                              <ul class="list">
+                                  <li>
+                                      <!-- <span>Official Communications</span> -->
+                                      <a class="searchable" href="#">Official Communications</a>
+
+                                       <ul class="list last-level">
+                                          <li><a class="searchable" href="#">Apply for Letter to Consulate</a></li>
+                                          <li><a class="searchable" href="#">Apply for Letter to Police</a></li>
+                                          <li><a class="searchable" href="#">Apply for Letter to Liquor License</a></li>
+                                          <li><a class="searchable" href="#">Apply for Salary Certificate</a></li>
+                                          <li><a class="searchable" href="#">Apply for No Objections Certificate</a></li>
+                                          <li><a class="searchable" href="#">Apply for Service Certificate</a></li>
+                                          <li><a class="searchable" href="#">Apply for Letter to External Agency</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <!-- <span>Employment Contract</span> -->
+                                      <a class="searchable" href="#">Employment Contract</a>
+
+                                       <ul class="list">
+                                          <li>
+                                            <a class="searchable" href="#">Apply for new</a>
+                                           <ul class="list last-level">
+                                              <li><a class="searchable" href="#">Apply Sheesha</a></li>
+                                              <li><a class="searchable" href="#">Amend JLT Contract</a></li>
+                                              <li><a class="searchable" href="#">Cancel JLT Contract</a></li>
+                                          </ul>
+                                          </li>
+                                          <li><a class="searchable" href="#">Amend existing</a></li>
+                                          <li><a class="searchable" href="#">Cancel existing</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>
+              </dd>
+          </dl>
+       </div>
+
+    </div>
+  </div>
+
+{% endblock %}
