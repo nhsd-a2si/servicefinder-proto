@@ -1,4 +1,4 @@
-{% extends 'layouts/layout-transactional.html' %}
+{% extends 'layouts/layout-search.html' %}
 
 {% block pageTitle %}
   Service Finder Beta
@@ -64,76 +64,79 @@
 
       <div id="service-list-container nhsuk-radios">
 
-        <ul class="list phone-list" id="hiddenlist" style="top:176px;min-height: 500px;visibility: hidden;">
+        <ul class="list phone-list first-level" id="service-list-container" style="top:176px;min-height: 500px;visibility: hidden;">
+
+
           
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g1" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Benchill Medical Practice - South Manchester">
+          
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g1" type="radio" name="selectedgp" value="Benchill Medical Practice - South Manchester">
 
-          <label for="gp-g1" class="nhsuk-label nhsuk-radios__label">Benchill Medical Practice - South Manchester</label>
-        </div>
+          <label for="gp-g1" class="nhsuk-label nhsuk-radios__label name">Benchill Medical Practice - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g2" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="RK Medical Practice - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g2" type="radio" name="selectedgp" value="RK Medical Practice - South Manchester">
 
-          <label for="gp-g2" class="nhsuk-label nhsuk-radios__label">RK Medical Practice - South Manchester</label>
-        </div>
+          <label for="gp-g2" class="nhsuk-label nhsuk-radios__label name">RK Medical Practice - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g3" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Cornishway Group Practice - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g3" type="radio" name="selectedgp" value="Cornishway Group Practice - South Manchester">
 
-          <label for="gp-g3" class="nhsuk-label nhsuk-radios__label">Cornishway Group Practice - South Manchester</label>
-        </div>
+          <label for="gp-g3" class="nhsuk-label nhsuk-radios__label name">Cornishway Group Practice - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g4" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Peel Hall Medical Practice - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g4" type="radio" name="selectedgp" value="Peel Hall Medical Practice - South Manchester">
 
-          <label for="gp-g4" class="nhsuk-label nhsuk-radios__label">Peel Hall Medical Practice - South Manchester</label>
-        </div>
+          <label for="gp-g4" class="nhsuk-label nhsuk-radios__label name">Peel Hall Medical Practice - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g5" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="The Maples Medical Centre - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g5" type="radio" name="selectedgp" value="The Maples Medical Centre - South Manchester">
 
-          <label for="gp-g5" class="nhsuk-label nhsuk-radios__label">The Maples Medical Centre - South Manchester</label>
-        </div>
+          <label for="gp-g5" class="nhsuk-label nhsuk-radios__label name">The Maples Medical Centre - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g6" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Bowland Medical Practice - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g6" type="radio" name="selectedgp" value="Bowland Medical Practice - South Manchester">
 
-          <label for="gp-g6" class="nhsuk-label nhsuk-radios__label">Bowland Medical Practice - South Manchester</label>
-        </div>
+          <label for="gp-g6" class="nhsuk-label nhsuk-radios__label name">Bowland Medical Practice - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g7" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Tregenna Group Practice - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g7" type="radio" name="selectedgp" value="Tregenna Group Practice - South Manchester">
 
-          <label for="gp-g7" class="nhsuk-label nhsuk-radios__label">Tregenna Group Practice - South Manchester</label>
-        </div>
+          <label for="gp-g7" class="nhsuk-label nhsuk-radios__label name">Tregenna Group Practice - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g8" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Gatley Green Surgery (Branch Surgery of NGP) - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g8" type="radio" name="selectedgp" value="Gatley Green Surgery (Branch Surgery of NGP) - South Manchester">
 
-          <label for="gp-g8" class="nhsuk-label nhsuk-radios__label">Gatley Green Surgery (Branch Surgery of NGP) - South Manchester</label>
-        </div>
+          <label for="gp-g8" class="nhsuk-label nhsuk-radios__label name">Gatley Green Surgery (Branch Surgery of NGP) - South Manchester</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g9" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Gatley Medical Centre - Stockport">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g9" type="radio" name="selectedgp" value="Gatley Medical Centre - Stockport">
 
-          <label for="gp-g9" class="nhsuk-label nhsuk-radios__label">Gatley Medical Centre - Stockport</label>
-        </div>
+          <label for="gp-g9" class="nhsuk-label nhsuk-radios__label name">Gatley Medical Centre - Stockport</label>
+        
         </li>
 
-        <li><div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="gp-g10" type="radio" name="selectedgp" data-parsley-required data-parsley-required-message="You must select a GP to continue" data-parsley-errors-container="#parsely-error-field" value="Northenden Group Practice - South Manchester">
+        <li class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="gp-g10" type="radio" name="selectedgp" value="Northenden Group Practice - South Manchester">
 
-          <label for="gp-g10" class="nhsuk-label nhsuk-radios__label">Northenden Group Practice - South Manchester</label>
-        </div>
+          <label for="gp-g10" class="nhsuk-label nhsuk-radios__label name">Northenden Group Practice - South Manchester</label>
+        
         </li>
 
 

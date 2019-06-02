@@ -1,14 +1,17 @@
 // ES6 or Vanilla JavaScript
 function servicetypesearch() {
 
-$('#nhsuk-footer').css("display","none");
+//$('#nhsuk-footer').css("display","block");
+$('body').css("height","100vh");
+$('body').css("overflow","hidden");
 
 
 var labels = $('#service-list-container label');  // cache this for better performance
 
 $('input#servicetype').keypress(function() {
       $('#service-list-container').css("visibility","visible");
-      $('html').css("height","100%");
+      $('body').css("overflow","visible");
+      $('html').css("height","200%");
       $(this).focus();
     });
 

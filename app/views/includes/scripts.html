@@ -10,24 +10,18 @@
 
 
 
-<!--<script src="/js/nested-list.min.js">
-</script>-->
 
 
 
 <script type="text/javascript">
-  $('.showhiddeninfo').on("click", function () {
-    $('.hidden-info').fadeIn();
-    $(this).fadeOut();
+  $(document).ready(function(){
 
-});
-</script>
+   var options = {
+    valueNames: [ 'name' ]
+  };
+  var gpList = new List('services', options);
 
-
-
-<script type="text/javascript">
-
-	$('input#servicetype').keypress(function() {
+  $('input#servicetype').keypress(function() {
       $('#hiddenlist').css("visibility","visible");
       $('#nhsuk-footer').css("visibility","hidden");
       $('html').css("height","100%");
@@ -41,31 +35,20 @@
   });
   console.log(selected);
 
-var options = {
-  valueNames: [ 'name' ]
-};
+});
 
-var serviceList = new List('services', options);
 
+
+  $('.showhiddeninfo').on("click", function () {
+    $('.hidden-info').fadeIn();
+    $(this).fadeOut();
+
+});
 </script>
 
 
-<!--<script type="text/javascript">
-	$(function(){
-			
-			var options = {
-			  valueNames: ['searchable'],
-			  
-			  nestedSearch: true
-			};
-			var userList = new List('users', options);
-		})
-
-</script>-->
-
-  <script type="text/javascript">
-    $( document ).ready( servicetypesearch );
-  </script>
  
+
+
 
 
