@@ -401,5 +401,39 @@ line-height: 1.5;
 
 
 .showhiddeninfo {
+background-color: white;
+background-image: url('/images/icon-expander-plus.svg');
+background-repeat: no-repeat;
+background-position: 8px 10px;
+color: #005eb8;
 font-size: 19px;
+cursor: pointer;
+display: block;
+padding: 12px 12px 12px 48px;
+position: relative;
+top:-20px;
+border-radius: 4px
+}
+.showhiddeninfo a, .showhiddeninfo a:visited {
+color: #005eb8;
+}
+
+
+// Some action menu stuff
+#action-jump {
+  background-image: url('/images/action-arrow.png');
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 2px 0;
+  padding: 0 0 6px 36px;
+  text-decoration: none;
+}
+.sticky-card {
+  z-index: 1000;
+
+}
+
+#action-menu-links li {
+  padding: 0.5em 0;
+  border-bottom: 1px solid #999;
 }
