@@ -10,6 +10,19 @@
 ///////////////////////////////////////////
 
 
+// styles/overide on wider 1024+ screens, let's fill a 1280
+
+@media (min-width: 1025px) {
+  .nhsuk-width-container {
+      //margin: 0 16px;
+      max-width: 1280px;
+  }
+  .long-fix {
+  max-width: 800px;
+  }
+}
+
+
 
 // a few utilities to hide things on x devices
 
@@ -26,8 +39,10 @@
 
 
 // for those long titles you don't want to stretch all over the screen
-.long-fix {
+@media (min-width: 641px) and (max-width: 1024px) {
+  .long-fix {
   max-width: 630px;
+  }
 }
 // and for when you do
 .short-fix {
